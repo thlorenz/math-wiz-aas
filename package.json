@@ -1,0 +1,35 @@
+{
+  "name": "math-wiz-aas",
+  "version": "0.0.0",
+  "description": "Math Wiz as a Service example for the deoptigate webinar.",
+  "main": "math-wiz-aas.js",
+  "scripts": {
+    "start": "NSOLID_COMMAND=9001 nsolid ./math-wiz-aas.js",
+    "deoptigate": "NSOLID_COMMAND=9001 deoptigate -- nsolid ./math-wiz-aas.js"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git://github.com/thlorenz/math-wiz-aas.git"
+  },
+  "homepage": "https://github.com/thlorenz/math-wiz-aas",
+  "keywords": [],
+  "author": {
+    "name": "Thorsten Lorenz",
+    "email": "thlorenz@gmx.de",
+    "url": "http://thlorenz.com"
+  },
+  "license": {
+    "type": "MIT",
+    "url": "https://github.com/thlorenz/math-wiz-aas/blob/master/LICENSE"
+  },
+  "engine": {
+    "node": ">=8"
+  },
+  "dependencies": {
+    "body-parser": "~1.18.3",
+    "express": "~4.16.4"
+  },
+  "devDependencies": {
+    "deoptigate": "~0.5.0"
+  }
+}

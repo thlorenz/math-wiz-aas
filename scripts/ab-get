@@ -1,0 +1,4 @@
+#!/bin/sh
+
+ab -c $1 -n $2 \
+  'http://localhost:3444/hyperbola/2/5/-20000/20000/'
