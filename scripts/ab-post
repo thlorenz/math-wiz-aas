@@ -1,4 +1,0 @@
-#!/bin/sh
-
-ab -p $1 -T application/json  -c $2 -n $3 \
-  http://localhost:3444/hyperbola

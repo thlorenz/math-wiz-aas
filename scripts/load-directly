@@ -1,0 +1,54 @@
+#!/usr/bin/env node
+
+'use strict'
+
+const { hyperbola } = require('../lib/calc')
+const payloads = [
+  { c: 1, a: 2, b: 5, minX: -5000, maxX: 5000 },
+  { d: 1, a: 2, b: 5, minX: -5000, maxX: 5000 },
+  { e: 1, a: 2, b: 5, minX: -5000, maxX: 5000 },
+  { d: 's', a: 2, b: 5, minX: -5000, maxX: 5000 },
+  { e: 'r', a: 2, b: 5, minX: -5000, maxX: 5000 },
+  { f: 1, a: 2, b: 5, minX: -5000, maxX: 5000 },
+  { g: 2, a: 2, b: 5, minX: -5000, maxX: 5000 },
+  { h: 3, a: 2, b: 5, minX: -5000, maxX: 5000, f: 1 },
+  { i: 2, a: 2, b: 5, minX: -5000, maxX: 5000, g: 2 },
+  { j: 1, a: 2, b: 5, minX: -5000, maxX: 5000, h: 3 },
+  { k: 5, a: 2, b: 5, minX: -5000, maxX: 5000, i: 2 },
+  { l: 5, a: 2, b: 5, minX: -5000, maxX: 5000, j: 1 },
+  { m: 5, a: 2, b: 5, minX: -5000, maxX: 5000, k: 5 },
+  { n: 5, a: 2, b: 5, minX: -5000, maxX: 5000, l: 5 },
+  { o: 5, a: 2, b: 5, minX: -5000, maxX: 5000, m: 5 },
+  { p: 5, a: 2, b: 5, minX: -5000, maxX: 5000, n: 5 },
+  { q: 5, a: 2, b: 5, minX: -5000, maxX: 5000, o: 5 },
+  { r: 2, a: 2, b: 5, minX: -5000, maxX: 5000 },
+  { s: 2, a: 2, b: 5, minX: -5000, maxX: 5000 },
+  { t: 2, a: 2, b: 5, minX: -5000, maxX: 5000 },
+  { u: 2, a: 2, b: 5, minX: -5000, maxX: 5000 },
+  { v: 2, a: 2, b: 5, minX: -5000, maxX: 5000 },
+  { w: 2, a: 2, b: 5, minX: -5000, maxX: 5000 },
+  { x: 2, a: 2, b: 5, minX: -5000, maxX: 5000 },
+  { y: 2, a: 2, b: 5, minX: -5000, maxX: 5000 },
+  { z: 2, a: 2, b: 5, minX: -5000, maxX: 5000 }
+]
+const payloadsLen = payloads.length
+
+const useJSON = process.env.JSON != null
+
+const a = 2
+const b = 5
+const minX = -5000
+const maxX = 5000
+const ITER = parseInt(process.argv[2])
+
+let res = 0
+for (var i = 0; i < ITER; i++) {
+  if (useJSON) {
+    const idx = Math.floor(Math.random() * payloadsLen)
+    const payload = payloads[idx]
+    res += hyperbola(payload).length
+  } else {
+    res += hyperbola(a, b, minX, maxX).length
+  }
+}
+console.log({ res })
