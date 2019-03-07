@@ -13,7 +13,8 @@ console.error(process.pid)
 
 app
   .post('/hyperbola', jsonParser, (req, res) => {
-    const result = hyperbola(req.body)
+    const { a, b, minX, maxX } = req.body
+    const result = hyperbola({ a, b, minX, maxX })
     res
       .json(result)
       .status(200)
